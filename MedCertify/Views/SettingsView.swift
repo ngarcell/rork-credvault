@@ -101,7 +101,7 @@ struct SettingsView: View {
                     Image(systemName: "crown.fill")
                         .foregroundStyle(Theme.credentialGold)
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("CredVault Pro")
+                        Text("MedCertify Pro")
                             .font(.body.weight(.semibold))
                         Text("All features unlocked")
                             .font(.caption)
@@ -165,7 +165,7 @@ struct SettingsView: View {
                 Label {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(biometricTypeName)
-                        Text("Require authentication to open CredVault")
+                        Text("Require authentication to open MedCertify")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
@@ -258,7 +258,7 @@ struct SettingsView: View {
             Button {
                 requestReview()
             } label: {
-                Label("Rate CredVault", systemImage: "star.fill")
+                Label("Rate MedCertify", systemImage: "star.fill")
             }
 
             Link(destination: URL(string: "mailto:\(Constants.supportEmail)")!) {
@@ -283,7 +283,7 @@ struct SettingsView: View {
                 Text("Important Disclosure")
                     .font(.caption.weight(.bold))
                     .foregroundStyle(.secondary)
-                Text("CredVault is a personal organization tool. It is not an official credential verification system and does not guarantee compliance. Always verify directly with licensing boards and accrediting bodies. This app does not collect or store patient health data.")
+                Text("MedCertify is a personal organization tool. It is not an official credential verification system and does not guarantee compliance. Always verify directly with licensing boards and accrediting bodies. This app does not collect or store patient health data.")
                     .font(.caption2)
                     .foregroundStyle(.secondary)
             }

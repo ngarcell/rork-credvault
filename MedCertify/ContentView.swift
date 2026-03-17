@@ -89,7 +89,7 @@ struct ContentView: View {
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             context.evaluatePolicy(
                 .deviceOwnerAuthenticationWithBiometrics,
-                localizedReason: "Unlock CredVault to access your credentials"
+                localizedReason: "Unlock MedCertify to access your credentials"
             ) { success, _ in
                 DispatchQueue.main.async {
                     if success {
@@ -108,7 +108,7 @@ struct ContentView: View {
             // Fallback to passcode
             context.evaluatePolicy(
                 .deviceOwnerAuthentication,
-                localizedReason: "Unlock CredVault to access your credentials"
+                localizedReason: "Unlock MedCertify to access your credentials"
             ) { success, _ in
                 DispatchQueue.main.async {
                     if success {

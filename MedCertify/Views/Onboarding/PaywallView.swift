@@ -65,7 +65,7 @@ struct PaywallView: View {
             Text("Protect your career")
                 .font(.title.bold())
 
-            Text("A license lapse costs $5,000–$50,000+ in lost income.\nCredVault costs less than one patient visit.")
+            Text("A license lapse costs $5,000–$50,000+ in lost income.\nMedCertify costs less than one patient visit.")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
