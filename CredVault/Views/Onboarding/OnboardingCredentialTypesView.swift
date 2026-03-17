@@ -41,7 +41,7 @@ struct OnboardingCredentialTypesView: View {
 
             VStack(spacing: 8) {
                 if !viewModel.selectedCredentialTypes.isEmpty {
-                    Text("\(viewModel.selectedCredentialTypes.count) credentials — MedCertify will track all of these")
+                    Text("\(viewModel.selectedCredentialTypes.count) credentials — CredVault will track all of these")
                         .font(.footnote.weight(.medium))
                         .foregroundStyle(Theme.medicalBlue)
                 }

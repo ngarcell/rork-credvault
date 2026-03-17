@@ -2,16 +2,16 @@ import Foundation
 
 enum Constants {
     static let maxFreeCredentials = 3
-    static let appName = "MedCertify"
+    static let appName = "CredVault"
     static let monthlyPrice = "$9.99"
     static let annualPrice = "$49.99"
     static let annualMonthlyEquivalent = "$4.17"
 
     // MARK: - Support & Legal
     static let supportEmail = "support@socialreporthq.com"
-    static let privacyURL = "https://socialreporthq.com/medcertify/privacy"
-    static let termsURL = "https://socialreporthq.com/medcertify/terms"
-    static let supportURL = "https://socialreporthq.com/medcertify/support"
+    static let privacyURL = "https://socialreporthq.com/credvault/privacy"
+    static let termsURL = "https://socialreporthq.com/credvault/terms"
+    static let supportURL = "https://socialreporthq.com/credvault/support"
 
     static let professions: [(name: String, icon: String)] = [
         ("Physician (MD/DO)", "stethoscope"),

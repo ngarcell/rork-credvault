@@ -12,37 +12,37 @@
 			containerPortal = 105FC5722E9EAD3100EA8BCF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 105FC5792E9EAD3100EA8BCF;
-			remoteInfo = MedCertify;
+			remoteInfo = CredVault;
 		};
 		105FC5942E9EAD3200EA8BCF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 105FC5722E9EAD3100EA8BCF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 105FC5792E9EAD3100EA8BCF;
-			remoteInfo = MedCertify;
+			remoteInfo = CredVault;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		105FC57A2E9EAD3100EA8BCF /* MedCertify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedCertify.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		105FC5892E9EAD3200EA8BCF /* MedCertifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedCertifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		105FC5932E9EAD3200EA8BCF /* MedCertifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedCertifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		105FC57A2E9EAD3100EA8BCF /* CredVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CredVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		105FC5892E9EAD3200EA8BCF /* CredVaultTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CredVaultTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		105FC5932E9EAD3200EA8BCF /* CredVaultUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CredVaultUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		105FC57C2E9EAD3100EA8BCF /* MedCertify */ = {
+		105FC57C2E9EAD3100EA8BCF /* CredVault */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MedCertify;
+			path = CredVault;
 			sourceTree = "<group>";
 		};
-		105FC58C2E9EAD3200EA8BCF /* MedCertifyTests */ = {
+		105FC58C2E9EAD3200EA8BCF /* CredVaultTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MedCertifyTests;
+			path = CredVaultTests;
 			sourceTree = "<group>";
 		};
-		105FC5962E9EAD3200EA8BCF /* MedCertifyUITests */ = {
+		105FC5962E9EAD3200EA8BCF /* CredVaultUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MedCertifyUITests;
+			path = CredVaultUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +75,9 @@
 		105FC5712E9EAD3100EA8BCF = {
 			isa = PBXGroup;
 			children = (
-				105FC57C2E9EAD3100EA8BCF /* MedCertify */,
-				105FC58C2E9EAD3200EA8BCF /* MedCertifyTests */,
-				105FC5962E9EAD3200EA8BCF /* MedCertifyUITests */,
+				105FC57C2E9EAD3100EA8BCF /* CredVault */,
+				105FC58C2E9EAD3200EA8BCF /* CredVaultTests */,
+				105FC5962E9EAD3200EA8BCF /* CredVaultUITests */,
 				105FC57B2E9EAD3100EA8BCF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 		105FC57B2E9EAD3100EA8BCF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				105FC57A2E9EAD3100EA8BCF /* MedCertify.app */,
-				105FC5892E9EAD3200EA8BCF /* MedCertifyTests.xctest */,
-				105FC5932E9EAD3200EA8BCF /* MedCertifyUITests.xctest */,
+				105FC57A2E9EAD3100EA8BCF /* CredVault.app */,
+				105FC5892E9EAD3200EA8BCF /* CredVaultTests.xctest */,
+				105FC5932E9EAD3200EA8BCF /* CredVaultUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		105FC5792E9EAD3100EA8BCF /* MedCertify */ = {
+		105FC5792E9EAD3100EA8BCF /* CredVault */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 105FC59D2E9EAD3200EA8BCF /* Build configuration list for PBXNativeTarget "MedCertify" */;
+			buildConfigurationList = 105FC59D2E9EAD3200EA8BCF /* Build configuration list for PBXNativeTarget "CredVault" */;
 			buildPhases = (
 				105FC5762E9EAD3100EA8BCF /* Sources */,
 				105FC5772E9EAD3100EA8BCF /* Frameworks */,
@@ -108,18 +108,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				105FC57C2E9EAD3100EA8BCF /* MedCertify */,
+				105FC57C2E9EAD3100EA8BCF /* CredVault */,
 			);
-			name = MedCertify;
+			name = CredVault;
 			packageProductDependencies = (
 			);
-			productName = MedCertify;
-			productReference = 105FC57A2E9EAD3100EA8BCF /* MedCertify.app */;
+			productName = CredVault;
+			productReference = 105FC57A2E9EAD3100EA8BCF /* CredVault.app */;
 			productType = "com.apple.product-type.application";
 		};
-		105FC5882E9EAD3200EA8BCF /* MedCertify */ = {
+		105FC5882E9EAD3200EA8BCF /* CredVaultTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 105FC5A02E9EAD3200EA8BCF /* Build configuration list for PBXNativeTarget "MedCertify" */;
+			buildConfigurationList = 105FC5A02E9EAD3200EA8BCF /* Build configuration list for PBXNativeTarget "CredVaultTests" */;
 			buildPhases = (
 				105FC5852E9EAD3200EA8BCF /* Sources */,
 				105FC5862E9EAD3200EA8BCF /* Frameworks */,
@@ -131,18 +131,18 @@
 				105FC58B2E9EAD3200EA8BCF /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				105FC58C2E9EAD3200EA8BCF /* MedCertifyTests */,
+				105FC58C2E9EAD3200EA8BCF /* CredVaultTests */,
 			);
-			name = MedCertify;
+			name = CredVaultTests;
 			packageProductDependencies = (
 			);
-			productName = MedCertify;
-			productReference = 105FC5892E9EAD3200EA8BCF /* MedCertifyTests.xctest */;
+			productName = CredVaultTests;
+			productReference = 105FC5892E9EAD3200EA8BCF /* CredVaultTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		105FC5922E9EAD3200EA8BCF /* MedCertify */ = {
+		105FC5922E9EAD3200EA8BCF /* CredVaultUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 105FC5A32E9EAD3200EA8BCF /* Build configuration list for PBXNativeTarget "MedCertify" */;
+			buildConfigurationList = 105FC5A32E9EAD3200EA8BCF /* Build configuration list for PBXNativeTarget "CredVaultUITests" */;
 			buildPhases = (
 				105FC58F2E9EAD3200EA8BCF /* Sources */,
 				105FC5902E9EAD3200EA8BCF /* Frameworks */,
@@ -154,13 +154,13 @@
 				105FC5952E9EAD3200EA8BCF /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				105FC5962E9EAD3200EA8BCF /* MedCertifyUITests */,
+				105FC5962E9EAD3200EA8BCF /* CredVaultUITests */,
 			);
-			name = MedCertify;
+			name = CredVaultUITests;
 			packageProductDependencies = (
 			);
-			productName = MedCertify;
-			productReference = 105FC5932E9EAD3200EA8BCF /* MedCertifyUITests.xctest */;
+			productName = CredVaultUITests;
+			productReference = 105FC5932E9EAD3200EA8BCF /* CredVaultUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 105FC5752E9EAD3100EA8BCF /* Build configuration list for PBXProject "MedCertify" */;
+			buildConfigurationList = 105FC5752E9EAD3100EA8BCF /* Build configuration list for PBXProject "CredVault" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,9 +200,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				105FC5792E9EAD3100EA8BCF /* MedCertify */,
-				105FC5882E9EAD3200EA8BCF /* MedCertify */,
-				105FC5922E9EAD3200EA8BCF /* MedCertify */,
+				105FC5792E9EAD3100EA8BCF /* CredVault */,
+				105FC5882E9EAD3200EA8BCF /* CredVaultTests */,
+				105FC5922E9EAD3200EA8BCF /* CredVaultUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		105FC58B2E9EAD3200EA8BCF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 105FC5792E9EAD3100EA8BCF /* MedCertify */;
+			target = 105FC5792E9EAD3100EA8BCF /* CredVault */;
 			targetProxy = 105FC58A2E9EAD3200EA8BCF /* PBXContainerItemProxy */;
 		};
 		105FC5952E9EAD3200EA8BCF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 105FC5792E9EAD3100EA8BCF /* MedCertify */;
+			target = 105FC5792E9EAD3100EA8BCF /* CredVault */;
 			targetProxy = 105FC5942E9EAD3200EA8BCF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -301,12 +301,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-					CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-					COPY_PHASE_STRIP = NO;
-					SDKROOT = iphoneos;
-					SUPPORTED_PLATFORMS = iphoneos;
-					SDKROOT = iphoneos;
-					SUPPORTED_PLATFORMS = iphoneos;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -405,8 +401,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
-				INFOPLIST_KEY_NSCameraUsageDescription = "MedCertify uses the camera to scan and store credential documents and certificates.";
-				INFOPLIST_KEY_NSFaceIDUsageDescription = "MedCertify uses Face ID to protect your credential data.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "CredVault uses the camera to scan and store credential documents and certificates.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "CredVault uses Face ID to protect your credential data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -438,8 +434,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
-				INFOPLIST_KEY_NSCameraUsageDescription = "MedCertify uses the camera to scan and store credential documents and certificates.";
-				INFOPLIST_KEY_NSFaceIDUsageDescription = "MedCertify uses Face ID to protect your credential data.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "CredVault uses the camera to scan and store credential documents and certificates.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "CredVault uses Face ID to protect your credential data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -477,7 +473,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MedCertify.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MedCertify";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CredVault.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CredVault";
 			};
 			name = Debug;
 		};
@@ -498,7 +494,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MedCertify.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MedCertify";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CredVault.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CredVault";
 			};
 			name = Release;
 		};
@@ -517,7 +513,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MedCertify;
+				TEST_TARGET_NAME = CredVault;
 			};
 			name = Debug;
 		};
@@ -536,14 +532,14 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MedCertify;
+				TEST_TARGET_NAME = CredVault;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		105FC5752E9EAD3100EA8BCF /* Build configuration list for PBXProject "MedCertify" */ = {
+		105FC5752E9EAD3100EA8BCF /* Build configuration list for PBXProject "CredVault" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				105FC59B2E9EAD3200EA8BCF /* Debug */,
@@ -552,7 +548,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		105FC59D2E9EAD3200EA8BCF /* Build configuration list for PBXNativeTarget "MedCertify" */ = {
+		105FC59D2E9EAD3200EA8BCF /* Build configuration list for PBXNativeTarget "CredVault" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				105FC59E2E9EAD3200EA8BCF /* Debug */,
@@ -561,7 +557,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		105FC5A02E9EAD3200EA8BCF /* Build configuration list for PBXNativeTarget "MedCertify" */ = {
+		105FC5A02E9EAD3200EA8BCF /* Build configuration list for PBXNativeTarget "CredVaultTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				105FC5A12E9EAD3200EA8BCF /* Debug */,
@@ -570,7 +566,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		105FC5A32E9EAD3200EA8BCF /* Build configuration list for PBXNativeTarget "MedCertify" */ = {
+		105FC5A32E9EAD3200EA8BCF /* Build configuration list for PBXNativeTarget "CredVaultUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				105FC5A42E9EAD3200EA8BCF /* Debug */,

@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct MedCertifyApp: App {
+struct CredVaultApp: App {
     @State private var subscriptionManager = SubscriptionManager()
 
     var sharedModelContainer: ModelContainer = {

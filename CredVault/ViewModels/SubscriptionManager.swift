@@ -4,8 +4,8 @@ import StoreKit
 @MainActor @Observable
 class SubscriptionManager {
     // MARK: - Product Identifiers
-    static let annualProductID = "com.medcertify.pro.annual"
-    static let monthlyProductID = "com.medcertify.pro.monthly"
+    static let annualProductID = "com.credvault.pro.annual"
+    static let monthlyProductID = "com.credvault.pro.monthly"
 
     // MARK: - State
     var isPro: Bool = false
@@ -17,8 +17,8 @@ class SubscriptionManager {
     var transactionListenerTask: Task<Void, Error>?
 
     // MARK: - Persisted State
-    private let isProKey = "medcertify_isPro"
-    private let trialStartKey = "medcertify_trialStart"
+    private let isProKey = "credvault_isPro"
+    private let trialStartKey = "credvault_trialStart"
 
     // MARK: - Testing / Sandbox Detection
     /// Detects StoreKit sandbox or Xcode environment for Apple reviewer testing
@@ -330,7 +330,7 @@ final class NotificationManager {
     func scheduleTrialEndReminder() {
         let content = UNMutableNotificationContent()
         content.title = "Free Trial Ending Tomorrow"
-        content.body = "Your MedCertify Pro trial ends tomorrow. Your credentials are safe — keep full access by subscribing."
+        content.body = "Your CredVault Pro trial ends tomorrow. Your credentials are safe — keep full access by subscribing."
         content.sound = .default
         content.categoryIdentifier = "TRIAL_END"
 

@@ -1,13 +1,13 @@
 //
-//  MedCertifyUITestsLaunchTests.swift
-//  MedCertifyUITests
+//  CredVaultUITestsLaunchTests.swift
+//  CredVaultUITests
 //
 //  Created by Rork on March 3, 2026.
 //
 
 import XCTest
 
-final class MedCertifyUITestsLaunchTests: XCTestCase {
+final class CredVaultUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

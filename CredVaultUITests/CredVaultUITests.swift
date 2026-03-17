@@ -1,13 +1,13 @@
 //
-//  MedCertifyUITests.swift
-//  MedCertifyUITests
+//  CredVaultUITests.swift
+//  CredVaultUITests
 //
 //  Created by Rork on March 3, 2026.
 //
 
 import XCTest
 
-final class MedCertifyUITests: XCTestCase {
+final class CredVaultUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
