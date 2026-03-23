@@ -44,13 +44,26 @@ class SubscriptionManager {
     // MARK: - Product Loading
 
     func loadProducts() async {
+        // Clear any previous error when reloading product information.
+        purchaseError = nil
         do {
             let storeProducts = try await Product.products(for: [
                 Self.annualProductID,
                 Self.monthlyProductID
             ])
             products = storeProducts.sorted { $0.price > $1.price }
+
+            // If one (or both) products are missing, treat it as a recoverable configuration issue.
+            let loadedIDs = Set(storeProducts.map { $0.id })
+            var missing: [String] = []
+            if !loadedIDs.contains(Self.annualProductID) { missing.append(Self.annualProductID) }
+            if !loadedIDs.contains(Self.monthlyProductID) { missing.append(Self.monthlyProductID) }
+            if !missing.isEmpty {
+                purchaseError = "Subscription options are not available right now. Please try again."
+                print("Missing expected subscription products: \(missing)")
+            }
         } catch {
+            purchaseError = "Unable to load subscription options. Please try again."
             print("Failed to load products: \(error)")
         }
     }
@@ -70,11 +83,11 @@ class SubscriptionManager {
                 await updateSubscriptionStatus()
                 await transaction.finish()
             case .userCancelled:
-                break
+                purchaseError = "Purchase cancelled."
             case .pending:
-                break
+                purchaseError = "Purchase is pending approval. You will be notified once it completes."
             @unknown default:
-                break
+                purchaseError = "Purchase result unavailable. Please try again."
             }
         } catch {
             purchaseError = "Purchase failed. Please try again."
@@ -84,15 +97,19 @@ class SubscriptionManager {
     }
 
     func purchaseAnnual() async {
-        if let product = products.first(where: { $0.id == Self.annualProductID }) {
-            await purchase(product)
+        guard let product = products.first(where: { $0.id == Self.annualProductID }) else {
+            purchaseError = "Annual subscription is unavailable right now. Please try again."
+            return
         }
+        await purchase(product)
     }
 
     func purchaseMonthly() async {
-        if let product = products.first(where: { $0.id == Self.monthlyProductID }) {
-            await purchase(product)
+        guard let product = products.first(where: { $0.id == Self.monthlyProductID }) else {
+            purchaseError = "Monthly subscription is unavailable right now. Please try again."
+            return
         }
+        await purchase(product)
     }
 
     // MARK: - Restore

@@ -7,6 +7,7 @@ struct PaywallView: View {
     @Environment(SubscriptionManager.self) private var subscriptionManager
     @State private var selectedPlan: Plan = .annual
     @State private var isLoading: Bool = false
+    @State private var isLoadingProducts: Bool = true
     @State private var errorMessage: String?
 
     enum Plan { case annual, monthly }
@@ -29,11 +30,11 @@ struct PaywallView: View {
         }
         .scrollIndicators(.hidden)
         .overlay {
-            if isLoading {
+            if isLoading || isLoadingProducts {
                 ZStack {
                     Color.black.opacity(0.3)
                         .ignoresSafeArea()
-                    ProgressView("Processing...")
+                    ProgressView(isLoadingProducts ? "Loading subscription options..." : "Processing...")
                         .padding(24)
                         .background(.regularMaterial)
                         .clipShape(.rect(cornerRadius: 12))
@@ -49,7 +50,14 @@ struct PaywallView: View {
             Text(errorMessage ?? "")
         }
         .task {
+            isLoadingProducts = true
             await subscriptionManager.loadProducts()
+            isLoadingProducts = false
+
+            if let err = subscriptionManager.purchaseError {
+                errorMessage = err
+                subscriptionManager.purchaseError = nil
+            }
         }
     }
 
@@ -199,7 +207,7 @@ struct PaywallView: View {
         }
         .buttonStyle(.borderedProminent)
         .tint(Theme.medicalBlue)
-        .disabled(isLoading)
+        .disabled(isLoading || isLoadingProducts)
         .padding(.horizontal, 24)
         .padding(.top, 24)
         .sensoryFeedback(.success, trigger: selectedPlan)
@@ -228,7 +236,7 @@ struct PaywallView: View {
             }
             .font(.caption)
             .foregroundStyle(.secondary)
-            .disabled(isLoading)
+            .disabled(isLoading || isLoadingProducts)
 
             Text("•").foregroundStyle(.secondary)
 
