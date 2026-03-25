@@ -36,3 +36,6 @@ rork-eslint.config.js
 core
 node_modules
 .expo
+
+# Local diagnostic notes
+/DIAGNOSIS_STOREKIT_SUBSCRIPTION_NOOP_BUNDLEID.md
