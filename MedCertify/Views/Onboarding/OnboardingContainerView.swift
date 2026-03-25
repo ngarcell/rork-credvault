@@ -5,7 +5,6 @@ struct OnboardingContainerView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var viewModel = OnboardingViewModel()
     @Binding var onboardingComplete: Bool
-    @State private var showPaywall: Bool = false
 
     var body: some View {
         ZStack {
@@ -18,12 +17,23 @@ struct OnboardingContainerView: View {
                 case 2: OnboardingStatesView(viewModel: viewModel)
                 case 3: OnboardingCredentialTypesView(viewModel: viewModel)
                 case 4: OnboardingNotificationsView(viewModel: viewModel)
-                case 5: OnboardingTrialReminderView(viewModel: viewModel)
+                case 5:
+                    if SubscriptionManager.subscriptionsOfferedInApp {
+                        OnboardingTrialReminderView(viewModel: viewModel)
+                    } else {
+                        OnboardingFreeReleaseReminderView(viewModel: viewModel)
+                    }
                 case 6:
-                    PaywallView(
-                        onDismiss: { completeOnboarding(isPro: false) },
-                        onSubscribe: { completeOnboarding(isPro: true) }
-                    )
+                    if SubscriptionManager.subscriptionsOfferedInApp {
+                        PaywallView(
+                            onDismiss: { completeOnboarding(isPro: false) },
+                            onSubscribe: { completeOnboarding(isPro: true) }
+                        )
+                    } else {
+                        OnboardingFreeReleaseFinishView {
+                            completeOnboarding(isPro: true)
+                        }
+                    }
                 default: OnboardingWelcomeView(viewModel: viewModel)
                 }
             }

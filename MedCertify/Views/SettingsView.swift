@@ -95,64 +95,83 @@ struct SettingsView: View {
     // MARK: - Subscription
 
     private var subscriptionSection: some View {
-        Section("Subscription") {
-            if subscriptionManager.isPro {
-                HStack(spacing: 12) {
-                    Image(systemName: "crown.fill")
-                        .foregroundStyle(Theme.credentialGold)
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("MedCertify Pro")
-                            .font(.body.weight(.semibold))
-                        Text("All features unlocked")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                    }
-                    Spacer()
-                    Text("Active")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(Theme.statusGreen)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 4)
-                        .background(Theme.statusGreen.opacity(0.12))
-                        .clipShape(Capsule())
-                }
-                .padding(.vertical, 4)
-
-                Button("Manage Subscription") {
-                    Task {
-                        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                            try? await AppStore.showManageSubscriptions(in: windowScene)
-                        }
-                    }
-                }
-            } else {
-                Button {
-                    showPaywall = true
-                } label: {
+        Group {
+            if !SubscriptionManager.subscriptionsOfferedInApp {
+                Section("Subscription") {
                     HStack(spacing: 12) {
-                        Image(systemName: "crown.fill")
-                            .foregroundStyle(Theme.credentialGold)
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text("Upgrade to Pro")
+                        Image(systemName: "checkmark.seal.fill")
+                            .foregroundStyle(Theme.medicalBlue)
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Full app access")
                                 .font(.body.weight(.semibold))
-                                .foregroundStyle(.primary)
-                            Text("Unlimited credentials, reminders, CME tracking")
+                            Text("This release includes all features at no charge. Paid subscriptions may be added in a future update.")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
                     }
+                    .padding(.vertical, 4)
                 }
+            } else {
+                Section("Subscription") {
+                    if subscriptionManager.isPro {
+                        HStack(spacing: 12) {
+                            Image(systemName: "crown.fill")
+                                .foregroundStyle(Theme.credentialGold)
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("MedCertify Pro")
+                                    .font(.body.weight(.semibold))
+                                Text("All features unlocked")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                            Spacer()
+                            Text("Active")
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(Theme.statusGreen)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 4)
+                                .background(Theme.statusGreen.opacity(0.12))
+                                .clipShape(Capsule())
+                        }
+                        .padding(.vertical, 4)
 
-                Button("Restore Purchases") {
-                    Task {
-                        await subscriptionManager.restorePurchases()
+                        Button("Manage Subscription") {
+                            Task {
+                                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                                    try? await AppStore.showManageSubscriptions(in: windowScene)
+                                }
+                            }
+                        }
+                    } else {
+                        Button {
+                            showPaywall = true
+                        } label: {
+                            HStack(spacing: 12) {
+                                Image(systemName: "crown.fill")
+                                    .foregroundStyle(Theme.credentialGold)
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text("Upgrade to Pro")
+                                        .font(.body.weight(.semibold))
+                                        .foregroundStyle(.primary)
+                                    Text("Unlimited credentials, reminders, CME tracking")
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                }
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+
+                        Button("Restore Purchases") {
+                            Task {
+                                await subscriptionManager.restorePurchases()
+                            }
+                        }
+                        .foregroundStyle(Theme.medicalBlue)
                     }
                 }
-                .foregroundStyle(Theme.medicalBlue)
             }
         }
     }

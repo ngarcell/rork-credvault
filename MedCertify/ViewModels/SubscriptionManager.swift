@@ -3,6 +3,9 @@ import StoreKit
 
 @MainActor @Observable
 class SubscriptionManager {
+    /// Set to `true` after Paid Apps Agreement, banking/tax, and subscription products are live in App Store Connect.
+    static let subscriptionsOfferedInApp = false
+
     // MARK: - Product Identifiers
     static let annualProductID = "com.medcertify.pro.annual"
     static let monthlyProductID = "com.medcertify.pro.monthly"
@@ -32,8 +35,10 @@ class SubscriptionManager {
     }
 
     init() {
-        // In sandbox/debug, unlock Pro so Apple reviewers can test all features
-        if Self.isSandboxEnvironment {
+        if !Self.subscriptionsOfferedInApp {
+            isPro = true
+            UserDefaults.standard.set(true, forKey: isProKey)
+        } else if Self.isSandboxEnvironment {
             isPro = true
             UserDefaults.standard.set(true, forKey: isProKey)
         } else {
@@ -44,6 +49,11 @@ class SubscriptionManager {
     // MARK: - Product Loading
 
     func loadProducts() async {
+        guard Self.subscriptionsOfferedInApp else {
+            products = []
+            purchaseError = nil
+            return
+        }
         // Clear any previous error when reloading product information.
         purchaseError = nil
         do {
@@ -71,6 +81,7 @@ class SubscriptionManager {
     // MARK: - Purchase
 
     func purchase(_ product: Product) async {
+        guard Self.subscriptionsOfferedInApp else { return }
         purchaseInProgress = true
         purchaseError = nil
 
@@ -97,6 +108,7 @@ class SubscriptionManager {
     }
 
     func purchaseAnnual() async {
+        guard Self.subscriptionsOfferedInApp else { return }
         guard let product = products.first(where: { $0.id == Self.annualProductID }) else {
             purchaseError = "Annual subscription is unavailable right now. Please try again."
             return
@@ -105,6 +117,7 @@ class SubscriptionManager {
     }
 
     func purchaseMonthly() async {
+        guard Self.subscriptionsOfferedInApp else { return }
         guard let product = products.first(where: { $0.id == Self.monthlyProductID }) else {
             purchaseError = "Monthly subscription is unavailable right now. Please try again."
             return
@@ -115,6 +128,7 @@ class SubscriptionManager {
     // MARK: - Restore
 
     func restorePurchases() async {
+        guard Self.subscriptionsOfferedInApp else { return }
         purchaseInProgress = true
         purchaseError = nil
 
@@ -131,6 +145,12 @@ class SubscriptionManager {
     // MARK: - Subscription Status
 
     func updateSubscriptionStatus() async {
+        if !Self.subscriptionsOfferedInApp {
+            isPro = true
+            UserDefaults.standard.set(true, forKey: isProKey)
+            return
+        }
+
         var hasActiveSubscription = false
 
         for await result in Transaction.currentEntitlements {
@@ -156,6 +176,7 @@ class SubscriptionManager {
     // MARK: - Transaction Listener
 
     func listenForTransactions() {
+        guard Self.subscriptionsOfferedInApp else { return }
         transactionListenerTask = Task { [weak self] in
             for await result in Transaction.updates {
                 if case .verified(let transaction) = result {
@@ -178,6 +199,7 @@ class SubscriptionManager {
     }
 
     func triggerPaywall(reason: String) {
+        guard Self.subscriptionsOfferedInApp else { return }
         paywallTrigger = reason
         showPaywall = true
     }

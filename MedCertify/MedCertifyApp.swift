@@ -30,7 +30,9 @@ struct MedCertifyApp: App {
                 .environment(subscriptionManager)
                 .task {
                     subscriptionManager.listenForTransactions()
-                    await subscriptionManager.loadProducts()
+                    if SubscriptionManager.subscriptionsOfferedInApp {
+                        await subscriptionManager.loadProducts()
+                    }
                     await subscriptionManager.updateSubscriptionStatus()
                 }
         }
